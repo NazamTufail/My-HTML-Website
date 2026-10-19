@@ -6,12 +6,21 @@
     <title>About This Website</title>
 </head>
 <body>
+    <!-- 1.The placeholder where the header will load -->
+     <div id="header-placeholder"></div>
     <h1>About This Website</h1>
     <p>This Website is built one practical HTML step at a time.</p>
     <img src="https://placehold.co/600x400/orange/white" 
      alt="An Orange / white placeholder banner of 600*400 Size" width="400"/><br>
-     <img src="forest.jpg" alt="Forest picture" height="300" width="400"/><br>
-     <img src="HammadBD.jpeg" alt="Hammad BD picture" width="400"/>
-
+    <img src="forest.jpg" alt="Forest picture" height="300" width="400"/><br>
+    <img src="html.png" alt="HTML Badge" width="400">
+    <script>
+        <!-- 2.The script that fetches and inserts the header -->
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
